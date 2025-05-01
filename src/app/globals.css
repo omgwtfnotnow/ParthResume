@@ -32,7 +32,7 @@ html {
     --muted: 210 17% 95%;
     --muted-foreground: 210 10% 45%; /* Muted text color */
 
-    --accent: 60 80% 40%; /* Medium Dark Yellow #B39526 */
+    --accent: 60 70% 90%; /* Creamy Light Yellow #FAFAD2 */
     --accent-foreground: 210 14% 16%; /* Dark navy blue text on accent for contrast */
 
     --destructive: 0 84.2% 60.2%;
@@ -40,12 +40,12 @@ html {
 
     --border: 210 10% 88%; /* Adjusted border color */
     --input: 210 10% 88%; /* Adjusted input border */
-    --ring: 60 80% 40%; /* Accent color for focus rings */
+    --ring: 60 70% 90%; /* Accent color for focus rings */
 
-    --chart-1: 60 80% 40%; /* Use Accent */
+    --chart-1: 60 70% 90%; /* Use Accent */
     --chart-2: 210 14% 36%; /* Darker Navy */
     --chart-3: 210 14% 56%; /* Lighter Navy */
-    --chart-4: 60 70% 45%;  /* Darker Yellow */
+    --chart-4: 60 60% 85%;  /* Lighter Yellow */
     --chart-5: 210 10% 75%; /* Grayish */
 
     --radius: 0.5rem;
@@ -86,15 +86,15 @@ html {
     --muted: 210 14% 18%;
     --muted-foreground: 210 10% 60%;
 
-    --accent: 60 80% 50%; /* Dark Mode Medium Yellow #E6B333 */
-    --accent-foreground: 210 14% 10%; /* Dark text on accent */
+    --accent: 60 60% 25%; /* Dark Mode Creamy Yellow */
+    --accent-foreground: 210 17% 90%; /* Light text on dark accent */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 210 14% 24%;
     --input: 210 14% 24%;
-    --ring: 60 80% 50%; /* Accent color for focus rings */
+    --ring: 60 60% 25%; /* Accent color for focus rings */
 
     /* Dark mode sidebar adjustments if needed */
     --sidebar-background: 240 5.9% 10%;
