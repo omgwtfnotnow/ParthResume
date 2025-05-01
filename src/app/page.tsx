@@ -11,8 +11,11 @@ export default function Home() {
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        {/* Changed background to a gradient and adjusted text colors */}
-        <section id="home" className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-yellow-100 via-yellow-300 to-amber-400 text-amber-900 text-center p-8 -mt-16 pt-16 relative overflow-hidden">
+        {/* Changed background to an animated gradient and adjusted text colors */}
+        <section
+          id="home"
+          className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-yellow-100 via-yellow-300 to-amber-400 text-amber-900 text-center p-8 -mt-16 pt-16 relative overflow-hidden bg-[length:200%_200%] animate-gradient-animation" // Added bg-[length:200%_200%] and animate-gradient-animation
+        >
           {/* Optional: Add pseudo-elements for blur effect if desired */}
           {/* <div className="absolute inset-0 backdrop-blur-sm"></div> */}
           <div className="max-w-3xl z-10"> {/* Ensure content is above any blur effect */}

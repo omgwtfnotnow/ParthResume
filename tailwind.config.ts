@@ -87,11 +87,28 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'gradient-animation': { // Added gradient animation keyframes
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
+        },
+        fadeInUp: { // Added keyframes for fadeInUp if not implicitly defined by CSS
+            '0%': {
+                opacity: '0',
+                transform: 'translateY(20px)',
+            },
+            '100%': {
+                opacity: '1',
+                transform: 'translateY(0)',
+            },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-animation': 'gradient-animation 10s ease infinite', // Added gradient animation definition
+        'fadeInUp': 'fadeInUp 0.8s ease-out forwards', // Ensure fadeInUp is defined if not implicitly handled
   		}
   	}
   },
