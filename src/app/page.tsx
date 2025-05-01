@@ -6,30 +6,26 @@ import ScrollObserver from '@/components/scroll-observer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link'; // Import Link for smooth scrolling buttons
 import { Github, Linkedin, Mail } from 'lucide-react'; // Import icons for contact section
-import { BackgroundGradientAnimation } from '@/components/background-gradient-animation'; // Import the new component
+// Removed BackgroundGradientAnimation import
 
 export default function Home() {
   return (
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section with BackgroundGradientAnimation - Reverted to original content */}
+        {/* Hero Section - Removed BackgroundGradientAnimation */}
         <section
           id="home"
-          className="h-[calc(100vh-4rem)] relative -mt-16 pt-16" // Removed old gradient, set relative for absolute children
+          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 -mt-16 pt-16 bg-background" // Added bg-background
         >
-          <BackgroundGradientAnimation>
-            {/* Content overlayed on the gradient */}
-            {/* Removed pointer-events-none and increased z-index to ensure visibility */}
-            <div className="absolute z-20 inset-0 flex flex-col items-center justify-center text-center p-8">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white animate-fadeInUp scroll-target"> {/* Changed text to white */}
-                Hi, I am Parth Vasave
-              </h1>
-              <p className="text-lg md:text-xl text-white/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}> {/* Changed text to white/80 */}
-                Showcasing my journey and projects in web development.
-              </p>
-               {/* Content structure matches the user example's intent */}
-            </div>
-          </BackgroundGradientAnimation>
+          {/* Content directly inside the section */}
+          {/* Adjusted text colors to theme defaults */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-foreground animate-fadeInUp scroll-target"> {/* Changed text to foreground */}
+            Hi, I am Parth Vasave
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}> {/* Changed text to muted-foreground */}
+            Showcasing my journey and projects in web development.
+          </p>
+          {/* Removed the empty div for buttons */}
         </section>
 
         {/* About Section - Remains bg-background */}
@@ -108,4 +104,3 @@ export default function Home() {
     </ScrollObserver>
   );
 }
-

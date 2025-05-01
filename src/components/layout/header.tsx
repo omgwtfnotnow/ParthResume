@@ -13,56 +13,22 @@ export function Header() {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isHeroVisible, setIsHeroVisible] = useState(true); // Track hero section visibility
+  // Removed isHeroVisible state and related logic
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setScrolled(scrollPosition > 10);
-
-      // Check if hero section is (mostly) out of view
-      const heroElement = document.getElementById('home');
-      if (heroElement) {
-        const heroBottom = heroElement.getBoundingClientRect().bottom;
-        // Consider hero not visible if its bottom edge is above the viewport top
-        setIsHeroVisible(heroBottom > 50); // Adjust threshold as needed
-      } else {
-        setIsHeroVisible(scrollPosition < window.innerHeight * 0.5); // Fallback if element not found
-      }
+      // Removed hero visibility check
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Initial checks
+    // Initial check
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Determine text color based on scroll position and hero visibility
-  // Use white text when hero is visible and not scrolled far (over gradient)
-  // Use default theme text (foreground) when scrolled or hero not visible
-  const getTextColorClass = () => {
-    if (!scrolled && isHeroVisible && !isMobile) {
-       // Use white text on gradient hero background when not scrolled far
-      return 'text-white hover:text-white/80 hover:bg-transparent';
-    }
-    return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
-  };
-
-  const getLogoTextColorClass = () => {
-     if (!scrolled && isHeroVisible) {
-        // Use white text on gradient hero background when not scrolled far
-        return 'text-white hover:text-white/80';
-     }
-     return 'text-primary hover:text-accent'; // Default theme text/hover
-  }
-
-   const getMobileIconColorClass = () => {
-     if (!scrolled && isHeroVisible) {
-        // Use white text on gradient hero background when not scrolled far
-        return 'text-white hover:text-white/80 hover:bg-transparent';
-     }
-     return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
-   }
+  // Removed text color helper functions (getTextColorClass, getLogoTextColorClass, getMobileIconColorClass)
 
   // Updated navigation links for Experience and Education
   const navLinks = [
@@ -81,11 +47,10 @@ export function Header() {
           key={link.href}
           variant="ghost"
           asChild
-          // Apply text color based on scroll state
+          // Use default theme colors, hover state handled by variant="ghost"
           className={cn(
-            'justify-start transition-colors',
-            isMobile ? 'w-full text-left' : '',
-            !isMobile ? getTextColorClass() : 'text-foreground hover:text-accent hover:bg-accent/10' // Mobile always uses default theme text
+            'justify-start transition-colors text-foreground hover:text-accent hover:bg-accent/10', // Use default text color
+            isMobile ? 'w-full text-left' : ''
           )}
           onClick={() => isMobile && setIsOpen(false)}
         >
@@ -105,10 +70,9 @@ export function Header() {
         (scrolled || (isMobile && isOpen)) ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
       )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Apply text color based on scroll state */}
+        {/* Use default theme colors */}
         <Link href="#home" className={cn(
-            "text-xl font-bold transition-colors",
-            getLogoTextColorClass()
+            "text-xl font-bold transition-colors text-primary hover:text-accent" // Use default text color
           )}>
           My Portfolio
         </Link>
@@ -118,9 +82,9 @@ export function Header() {
         ) : isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
+              {/* Use default theme colors */}
               <Button variant="ghost" size="icon" className={cn(
-                  'transition-colors',
-                  getMobileIconColorClass()
+                  'transition-colors text-foreground hover:text-accent hover:bg-accent/10' // Use default text color
               )}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
