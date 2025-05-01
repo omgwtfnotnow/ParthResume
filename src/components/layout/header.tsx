@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Home, User, Code, Briefcase, Mail, GraduationCap } from 'lucide-react'; // Added GraduationCap and Briefcase
+import { Menu, User, Code, Briefcase, Mail, GraduationCap } from 'lucide-react'; // Removed Home icon
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils'; // Import cn for conditional classes
@@ -13,30 +13,25 @@ export function Header() {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  // Removed isHeroVisible state and related logic
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setScrolled(scrollPosition > 10);
-      // Removed hero visibility check
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Initial check
-    handleScroll();
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Removed text color helper functions (getTextColorClass, getLogoTextColorClass, getMobileIconColorClass)
-
-  // Updated navigation links for Experience and Education
+  // Updated navigation links: Removed the explicit "Home" link
   const navLinks = [
-    { href: '#home', label: 'Home', icon: <Home className="mr-2 h-4 w-4" /> },
+    // { href: '#home', label: 'Home', icon: <Home className="mr-2 h-4 w-4" /> }, // Removed Home link
     { href: '#about', label: 'About', icon: <User className="mr-2 h-4 w-4" /> },
     { href: '#projects', label: 'Projects', icon: <Code className="mr-2 h-4 w-4" /> },
-    { href: '#experience', label: 'Experience', icon: <Briefcase className="mr-2 h-4 w-4" /> }, // Changed from Resume
-    { href: '#education', label: 'Education', icon: <GraduationCap className="mr-2 h-4 w-4" /> }, // Added Education
+    { href: '#experience', label: 'Experience', icon: <Briefcase className="mr-2 h-4 w-4" /> },
+    { href: '#education', label: 'Education', icon: <GraduationCap className="mr-2 h-4 w-4" /> },
     { href: '#contact', label: 'Contact', icon: <Mail className="mr-2 h-4 w-4" /> },
   ];
 
@@ -47,9 +42,8 @@ export function Header() {
           key={link.href}
           variant="ghost"
           asChild
-          // Use default theme colors, hover state handled by variant="ghost"
           className={cn(
-            'justify-start transition-colors text-foreground hover:text-accent hover:bg-accent/10', // Use default text color
+            'justify-start transition-colors text-foreground hover:text-accent hover:bg-accent/10',
             isMobile ? 'w-full text-left' : ''
           )}
           onClick={() => isMobile && setIsOpen(false)}
@@ -66,25 +60,23 @@ export function Header() {
   return (
     <header className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        // Apply background only when scrolled or mobile sheet is open
         (scrolled || (isMobile && isOpen)) ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
       )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Use default theme colors */}
+        {/* Changed logo text to "Home" */}
         <Link href="#home" className={cn(
-            "text-xl font-bold transition-colors text-primary hover:text-accent" // Use default text color
+            "text-xl font-bold transition-colors text-primary hover:text-accent"
           )}>
-          My Portfolio
+          Home
         </Link>
 
-        {isMobile === undefined ? ( // Render placeholder or nothing during initial check
-          <div className="h-8 w-36 bg-muted rounded animate-pulse"></div> // Adjusted placeholder size
+        {isMobile === undefined ? (
+          <div className="h-8 w-36 bg-muted rounded animate-pulse"></div>
         ) : isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              {/* Use default theme colors */}
               <Button variant="ghost" size="icon" className={cn(
-                  'transition-colors text-foreground hover:text-accent hover:bg-accent/10' // Use default text color
+                  'transition-colors text-foreground hover:text-accent hover:bg-accent/10'
               )}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
@@ -92,8 +84,9 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <div className="pt-8">
+                 {/* Changed logo text in mobile sheet header as well */}
                  <Link href="#home" className="text-lg font-bold text-primary mb-6 block px-4" onClick={() => setIsOpen(false)}>
-                    My Portfolio
+                    Home
                 </Link>
                 <NavContent />
               </div>
