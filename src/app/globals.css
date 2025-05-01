@@ -65,8 +65,8 @@ html {
     --font-geist-mono: '__GeistMono_Fallback_760017', '__GeistMono_Fallback_Fallback_760017';
 
     /* Gradient Animation Variables */
-    --gradient-background-start: rgb(108, 0, 162);
-    --gradient-background-end: rgb(0, 17, 82);
+    --gradient-background-start: rgb(108, 0, 162); /* Default, can be overridden */
+    --gradient-background-end: rgb(0, 17, 82);    /* Default, can be overridden */
     --first-color: 18, 113, 255;
     --second-color: 221, 74, 255;
     --third-color: 100, 220, 255;

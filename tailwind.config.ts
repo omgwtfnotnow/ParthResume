@@ -88,7 +88,7 @@ export default {
   					height: '0'
   				}
   			},
-        // Removed gradient-animation keyframes as they are now in globals.css
+        // Keyframes are defined in globals.css, only need to reference them here
         fadeInUp: { // Added keyframes for fadeInUp if not implicitly defined by CSS
             '0%': {
                 opacity: '0',
@@ -99,12 +99,21 @@ export default {
                 transform: 'translateY(0)',
             },
         },
+        // Keyframes for gradient animation are in globals.css
+        moveInCircle: { /* defined in globals.css */ },
+        moveVertical: { /* defined in globals.css */ },
+        moveHorizontal: { /* defined in globals.css */ },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        // Removed gradient-animation definition as it's handled in globals.css now
-        'fadeInUp': 'fadeInUp 0.8s ease-out forwards', // Ensure fadeInUp is defined if not implicitly handled
+        'fadeInUp': 'fadeInUp 0.8s ease-out forwards', // Ensure fadeInUp is defined
+        // Reference gradient animations defined in globals.css
+        'first': 'moveVertical 30s ease infinite',
+        'second': 'moveInCircle 20s reverse infinite',
+        'third': 'moveInCircle 40s linear infinite',
+        'fourth': 'moveHorizontal 40s ease infinite',
+        'fifth': 'moveInCircle 20s ease infinite',
   		}
   	}
   },

@@ -25,8 +25,8 @@ export const BackgroundGradientAnimation: React.FC<
 > = ({
   children,
   className,
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
+  gradientBackgroundStart = "rgb(108, 0, 162)", // Default start color
+  gradientBackgroundEnd = "rgb(0, 17, 82)",     // Default end color
   firstColor = "18, 113, 255",
   secondColor = "221, 74, 255",
   thirdColor = "100, 220, 255",
@@ -44,7 +44,7 @@ export const BackgroundGradientAnimation: React.FC<
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: `linear-gradient(45deg, ${gradientBackgroundStart}, ${gradientBackgroundEnd})`,
+          background: `linear-gradient(45deg, var(--gradient-background-start, ${gradientBackgroundStart}), var(--gradient-background-end, ${gradientBackgroundEnd}))`,
         }}
       >
         <svg className="hidden">
