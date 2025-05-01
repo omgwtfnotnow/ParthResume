@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section - Adjusted light yellow gradient */}
+        {/* Hero Section - Rely on theme background, text colors updated */}
         <section
           id="home"
-          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-100 -mt-16 pt-16" // Adjusted gradient classes
+          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 bg-background -mt-16 pt-16" // Use default background
         >
           {/* Content directly inside the section */}
           {/* Adjusted text colors to theme defaults */}

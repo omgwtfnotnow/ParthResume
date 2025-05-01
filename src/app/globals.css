@@ -32,20 +32,20 @@ html {
     --muted: 210 17% 95%;
     --muted-foreground: 210 10% 45%; /* Muted text color */
 
-    --accent: 174 60% 40%; /* Teal #26A69A */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
+    --accent: 60 100% 81%; /* Light Yellow #FFFF9F */
+    --accent-foreground: 210 14% 16%; /* Dark navy blue text on accent for contrast */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 210 10% 88%; /* Adjusted border color */
     --input: 210 10% 88%; /* Adjusted input border */
-    --ring: 174 60% 40%; /* Accent color for focus rings */
+    --ring: 60 100% 81%; /* Accent color for focus rings */
 
-    --chart-1: 174 60% 40%; /* Use Accent */
+    --chart-1: 60 100% 81%; /* Use Accent */
     --chart-2: 210 14% 36%; /* Darker Navy */
     --chart-3: 210 14% 56%; /* Lighter Navy */
-    --chart-4: 174 40% 60%; /* Lighter Teal */
+    --chart-4: 60 80% 85%;  /* Lighter Yellow */
     --chart-5: 210 10% 75%; /* Grayish */
 
     --radius: 0.5rem;
@@ -86,15 +86,15 @@ html {
     --muted: 210 14% 18%;
     --muted-foreground: 210 10% 60%;
 
-    --accent: 174 60% 50%; /* Brighter Teal for dark mode */
-    --accent-foreground: 210 14% 10%;
+    --accent: 60 100% 75%; /* Slightly desaturated Yellow for dark mode #FFFFBF */
+    --accent-foreground: 210 14% 10%; /* Dark text on accent */
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 210 14% 24%;
     --input: 210 14% 24%;
-    --ring: 174 60% 50%; /* Accent color for focus rings */
+    --ring: 60 100% 75%; /* Accent color for focus rings */
 
     /* Dark mode sidebar adjustments if needed */
     --sidebar-background: 240 5.9% 10%;
@@ -140,4 +140,59 @@ html {
 /* Smooth scroll target offset */
 html {
   scroll-padding-top: 4rem; /* Adjust based on header height */
+}
+
+/* Background Gradient Animation Keyframes - kept in case needed later */
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+
+/* Apply animations using keyframes - kept in case needed later */
+.animate-first {
+  animation: moveVertical 30s ease infinite;
+}
+.animate-second {
+  animation: moveInCircle 20s reverse infinite;
+}
+.animate-third {
+  animation: moveInCircle 40s linear infinite;
+}
+.animate-fourth {
+  animation: moveHorizontal 40s ease infinite;
+}
+.animate-fifth {
+  animation: moveInCircle 20s ease infinite;
 }
