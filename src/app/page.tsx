@@ -10,7 +10,7 @@ export default function Home() {
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section id="home" className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-primary to-primary/80 text-primary-foreground text-center p-8 -mt-16 pt-16">
+        <section id="home" className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-accent to-primary text-primary-foreground text-center p-8 -mt-16 pt-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInUp scroll-target">
               Hi, I am Parth Vasave {/* Changed heading text */}
