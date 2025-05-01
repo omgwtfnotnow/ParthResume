@@ -11,7 +11,7 @@ interface Project {
   title: string;
   description: string;
   imageUrl: string;
-  liveLink: string;
+  liveLink: string; // Keep for potential future use or structure consistency
   repoLink?: string; // Optional repository link
   tags: string[];
 }
@@ -87,11 +87,14 @@ const ProjectsGrid: React.FC = () => {
                 </a>
               </Button>
             )}
+            {/* Removed Live Demo button */}
+            {/*
             <Button asChild variant="default" size="sm">
               <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="mr-1 h-4 w-4" /> Live Demo
               </a>
             </Button>
+            */}
           </CardFooter>
         </Card>
       ))}
