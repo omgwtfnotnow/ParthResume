@@ -15,6 +15,7 @@ interface TimelineItem {
   icon: React.ReactNode;
 }
 
+// Updated timelineData with the new internship experience
 const timelineData: TimelineItem[] = [
   {
     id: 1,
@@ -34,17 +35,17 @@ const timelineData: TimelineItem[] = [
     description: 'Developed and maintained scalable web applications using React and Node.js. Collaborated with cross-functional teams.',
     icon: <Briefcase className="h-5 w-5 text-primary" />,
   },
-  // Removed skill item
-  // {
-  //   id: 3,
-  //   type: 'skill',
-  //   title: 'Key Skills',
-  //   date: 'Acquired over time',
-  //   description: 'React, Next.js, TypeScript, Node.js, Three.js, Tailwind CSS, Cloud Platforms (AWS/GCP), Agile Methodologies.',
-  //   icon: <Star className="h-5 w-5 text-accent" />,
-  // },
   {
-    id: 4, // ID adjusted after removing skill item
+    id: 3, // New ID for the internship
+    type: 'experience',
+    title: 'Android Developer Intern',
+    subtitle: 'Startup X', // Assuming a placeholder company name
+    date: 'Oct 2021 - Jan 2022',
+    description: 'Learned Android Studio and Packaging Techniques. Got good grasp of Kotlin and XML. Helped developers with UI and debug Kotlin Code.',
+    icon: <Briefcase className="h-5 w-5 text-primary" />,
+  },
+  {
+    id: 4, // ID adjusted
     type: 'education',
     title: 'M.S. Computer Science',
     subtitle: 'University of Technology',
@@ -53,7 +54,7 @@ const timelineData: TimelineItem[] = [
     icon: <GraduationCap className="h-5 w-5 text-secondary-foreground" />,
   },
   {
-    id: 5, // ID adjusted after removing skill item
+    id: 5, // ID adjusted
     type: 'education',
     title: 'B.S. Computer Science',
     subtitle: 'State College',
@@ -68,7 +69,20 @@ interface ResumeTimelineProps {
 }
 
 const ResumeTimeline: React.FC<ResumeTimelineProps> = ({ filterType }) => {
-  const filteredData = timelineData.filter(item => item.type === filterType);
+  // Sort experience items by date descending (most recent first)
+  // Sort education items by date descending (most recent first)
+  const filteredData = timelineData
+    .filter(item => item.type === filterType)
+    .sort((a, b) => {
+      // Simple sort based on the start year extracted from the date string
+      const yearA = parseInt(a.date.split(' ')[0], 10);
+      const yearB = parseInt(b.date.split(' ')[0], 10);
+      // Handle "Present" case for experience
+      if (a.date.includes('Present')) return -1;
+      if (b.date.includes('Present')) return 1;
+      return yearB - yearA; // Descending order
+    });
+
 
   return (
     <div className="relative w-full max-w-3xl mx-auto pl-8">
