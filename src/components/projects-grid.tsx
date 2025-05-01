@@ -22,7 +22,7 @@ const projectsData: Project[] = [
     id: 1,
     title: 'BrewUpdate',
     description: 'A Python tool packaged as a standalone macOS app using Py2App. It visualizes Homebrew packages and allows users to modify permissions, check updates, and remove packages.',
-    imageUrl: '/MacOS Terminal Commands.jpeg', // Updated image URL
+    imageUrl: 'https://picsum.photos/seed/brewupdate/600/400', // Reverted to placeholder
     liveLink: '#', // Placeholder link
     repoLink: '#', // Placeholder link
     tags: ['Python', 'macOS', 'Py2App', 'Homebrew', 'GUI Tool'],
@@ -63,13 +63,12 @@ const ProjectsGrid: React.FC = () => {
                     alt={project.title}
                     fill // Use fill instead of layout="fill"
                     style={{ objectFit: 'cover' }} // Use inline style for objectFit
-                    className="rounded-t-lg" // Removed bg-muted
+                    className="rounded-t-lg bg-muted" // Re-added bg-muted for placeholder consistency
                     // Ensure sizes prop is provided if using fill and responsiveness is needed beyond simple cover, though often not strictly necessary with object-fit: cover
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Added sizes prop for better optimization with fill
-                    data-ai-hint={project.id === 1 ? "macos terminal commands screenshot" : "project interface screenshot app design code"} // Updated AI hint for BrewUpdate
+                    data-ai-hint={"project interface screenshot app design code"} // Restored original AI hint
                     priority={index < 3} // Prioritize loading the first few images
-                    // Add unoptimized prop if the image source is local (in public folder) and not served via CDN
-                    unoptimized={project.id === 1} // Explicitly add unoptimized for local images
+                    // unoptimized prop removed as picsum.photos is used
                 />
              </div>
           </CardHeader>
