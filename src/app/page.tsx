@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section - Removed BackgroundGradientAnimation */}
+        {/* Hero Section - Added light yellow gradient */}
         <section
           id="home"
-          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 -mt-16 pt-16 bg-background" // Added bg-background
+          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 -mt-16 pt-16 bg-gradient-to-br from-yellow-100 to-yellow-200" // Added gradient classes
         >
           {/* Content directly inside the section */}
           {/* Adjusted text colors to theme defaults */}
