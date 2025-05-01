@@ -1,3 +1,4 @@
+
 import ProjectsGrid from '@/components/projects-grid'; // Import the new ProjectsGrid
 import ResumeTimeline from '@/components/resume-timeline';
 import ScrollObserver from '@/components/scroll-observer';
@@ -26,7 +27,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
+        {/* About Section - Remains bg-background */}
         <section id="about" className="min-h-[60vh] flex items-center justify-center py-16 px-4 md:px-8 bg-background scroll-mt-16">
           <div className="max-w-3xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-target animate-fadeInUp">About Me</h2>
@@ -40,28 +41,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-secondary scroll-mt-16">
+        {/* Projects Section - Changed bg-secondary to bg-background */}
+        <section id="projects" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-background scroll-mt-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">My Projects</h2>
           <div className="w-full max-w-6xl">
              <ProjectsGrid /> {/* Use the new ProjectsGrid component */}
           </div>
         </section>
 
-        {/* Experience Section - Removed min-h-screen, changed py-16 to py-12 */}
+        {/* Experience Section - Remains bg-background */}
         <section id="experience" className="flex flex-col items-center py-12 px-4 md:px-8 bg-background scroll-mt-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">Work Experience</h2>
           <ResumeTimeline filterType="experience" />
         </section>
 
-        {/* Education Section - Removed min-h-screen, changed py-16 to py-12 */}
-        <section id="education" className="flex flex-col items-center py-12 px-4 md:px-8 bg-secondary scroll-mt-16">
+        {/* Education Section - Changed bg-secondary to bg-background */}
+        <section id="education" className="flex flex-col items-center py-12 px-4 md:px-8 bg-background scroll-mt-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">Education</h2>
           <ResumeTimeline filterType="education" />
         </section>
 
 
-        {/* Contact Section */}
+        {/* Contact Section - Remains bg-background */}
         <section id="contact" className="min-h-[50vh] flex items-center justify-center py-16 px-4 md:px-8 bg-background scroll-mt-16"> {/* Changed bg to background, reduced min-h */}
           <div className="w-full max-w-lg text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 scroll-target animate-fadeInUp">Get In Touch</h2>
