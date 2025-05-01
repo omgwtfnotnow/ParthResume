@@ -2,11 +2,8 @@ import ProjectsGrid from '@/components/projects-grid'; // Import the new Project
 import ResumeTimeline from '@/components/resume-timeline';
 import ScrollObserver from '@/components/scroll-observer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import Link from 'next/link'; // Import Link for smooth scrolling buttons
+import { Github, Linkedin, Mail } from 'lucide-react'; // Import icons for contact section
 
 export default function Home() {
   return (
@@ -69,31 +66,39 @@ export default function Home() {
 
 
         {/* Contact Section */}
-        <section id="contact" className="min-h-[70vh] flex items-center justify-center py-16 px-4 md:px-8 bg-background scroll-mt-16"> {/* Changed bg to background */}
-          <div className="w-full max-w-lg">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center scroll-target animate-fadeInUp">Get In Touch</h2>
-            <Card className="scroll-target animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-              <CardHeader>
-                <CardTitle>Contact Me</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your Name" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Your message..." />
-                  </div>
-                  <Button type="submit" className="w-full">Send Message</Button>
-                </form>
-              </CardContent>
-            </Card>
+        <section id="contact" className="min-h-[50vh] flex items-center justify-center py-16 px-4 md:px-8 bg-background scroll-mt-16"> {/* Changed bg to background, reduced min-h */}
+          <div className="w-full max-w-lg text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 scroll-target animate-fadeInUp">Get In Touch</h2>
+            <p className="text-lg text-muted-foreground mb-8 scroll-target animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
+              Feel free to reach out or connect with me on social media!
+            </p>
+            <div className="flex justify-center items-center space-x-6 scroll-target animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+              <a
+                href="https://github.com/omgwtfnotnow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-accent transition-colors duration-200"
+                aria-label="GitHub Profile"
+              >
+                <Github size={32} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/parth-vasave/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-accent transition-colors duration-200"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin size={32} />
+              </a>
+              <a
+                href="mailto:Mailparthvasave@gmail.com"
+                className="text-foreground hover:text-accent transition-colors duration-200"
+                aria-label="Email Parth Vasave"
+              >
+                <Mail size={32} />
+              </a>
+            </div>
           </div>
         </section>
 
