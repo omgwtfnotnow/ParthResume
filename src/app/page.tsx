@@ -25,7 +25,8 @@ export default function Home() {
               <Button size="lg" variant="secondary" asChild>
                 <Link href="#projects">View Projects</Link>
               </Button>
-              <Button size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10" asChild>
+              {/* Updated Button: Removed text-primary-foreground, adjusted hover */}
+              <Button size="lg" variant="outline" className="border-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
                 <Link href="#contact">Get In Touch</Link>
               </Button>
             </div>
