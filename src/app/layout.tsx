@@ -8,8 +8,8 @@ import { Toaster } from '@/components/ui/toaster'; // Import Toaster
 
 
 export const metadata: Metadata = {
-  title: 'Personal Zenith', // Updated title
-  description: 'A personal portfolio and resume site.', // Updated description
+  title: 'Modern Portfolio', // Updated title
+  description: 'A simple and modern personal portfolio website.', // Updated description
 };
 
 export default function RootLayout({
