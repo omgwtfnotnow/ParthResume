@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Geist', sans-serif; /* Use Geist font for consistency */
+  /* font-family: 'Geist', sans-serif; Removed as font-sans with variables is used in layout */
   scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
@@ -59,6 +59,10 @@ html {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Add font variables from Geist */
+    --font-geist-sans: '__GeistSans_Fallback_e1f4fe', '__GeistSans_Fallback_Fallback_e1f4fe';
+    --font-geist-mono: '__GeistMono_Fallback_760017', '__GeistMono_Fallback_Fallback_760017';
   }
 
   .dark {
@@ -100,6 +104,10 @@ html {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Update font variables for dark mode if necessary (usually same) */
+    --font-geist-sans: '__GeistSans_Fallback_e1f4fe', '__GeistSans_Fallback_Fallback_e1f4fe';
+    --font-geist-mono: '__GeistMono_Fallback_760017', '__GeistMono_Fallback_Fallback_760017';
   }
 }
 
@@ -108,7 +116,7 @@ html {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* Apply base font using variable */
   }
 }
 
