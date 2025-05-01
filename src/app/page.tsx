@@ -13,7 +13,7 @@ export default function Home() {
         <section id="home" className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-primary to-primary/80 text-primary-foreground text-center p-8 -mt-16 pt-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInUp scroll-target">
-              Welcome to My Portfolio
+              Parth Vasave {/* Changed heading text */}
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}>
               Showcasing my journey and projects in web development.
