@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Home, User, Code, Briefcase, Mail } from 'lucide-react';
+import { Menu, Home, User, Code, Briefcase, Mail, GraduationCap } from 'lucide-react'; // Added GraduationCap
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils'; // Import cn for conditional classes
@@ -24,12 +24,13 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Updated navigation links
+  // Updated navigation links for Experience and Education
   const navLinks = [
     { href: '#home', label: 'Home', icon: <Home className="mr-2 h-4 w-4" /> },
     { href: '#about', label: 'About', icon: <User className="mr-2 h-4 w-4" /> },
     { href: '#projects', label: 'Projects', icon: <Code className="mr-2 h-4 w-4" /> },
-    { href: '#resume', label: 'Resume', icon: <Briefcase className="mr-2 h-4 w-4" /> },
+    { href: '#experience', label: 'Experience', icon: <Briefcase className="mr-2 h-4 w-4" /> }, // Changed from Resume
+    { href: '#education', label: 'Education', icon: <GraduationCap className="mr-2 h-4 w-4" /> }, // Added Education
     { href: '#contact', label: 'Contact', icon: <Mail className="mr-2 h-4 w-4" /> },
   ];
 

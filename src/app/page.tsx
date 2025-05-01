@@ -42,6 +42,7 @@ export default function Home() {
             </p>
             <p className="text-lg text-muted-foreground scroll-target animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
               My goal is to build efficient, scalable, and visually appealing digital experiences. Let's create something amazing together!
+              {/* Consider adding skills here or in a dedicated section */}
             </p>
           </div>
         </section>
@@ -54,14 +55,21 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Resume Section */}
-        <section id="resume" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-background scroll-mt-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">My Journey</h2>
-          <ResumeTimeline />
+        {/* Experience Section */}
+        <section id="experience" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-background scroll-mt-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">Work Experience</h2>
+          <ResumeTimeline filterType="experience" />
         </section>
 
+        {/* Education Section */}
+        <section id="education" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-secondary scroll-mt-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">Education</h2>
+          <ResumeTimeline filterType="education" />
+        </section>
+
+
         {/* Contact Section */}
-        <section id="contact" className="min-h-[70vh] flex items-center justify-center py-16 px-4 md:px-8 bg-secondary scroll-mt-16">
+        <section id="contact" className="min-h-[70vh] flex items-center justify-center py-16 px-4 md:px-8 bg-background scroll-mt-16"> {/* Changed bg to background */}
           <div className="w-full max-w-lg">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center scroll-target animate-fadeInUp">Get In Touch</h2>
             <Card className="scroll-target animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
