@@ -19,7 +19,8 @@ export default function Home() {
         >
           <BackgroundGradientAnimation>
             {/* Content overlayed on the gradient */}
-            <div className="absolute z-10 inset-0 flex flex-col items-center justify-center text-center p-8 pointer-events-none"> {/* Added z-10, removed z-50 from user example as z-10 should be sufficient */}
+            {/* Removed pointer-events-none and increased z-index to ensure visibility */}
+            <div className="absolute z-20 inset-0 flex flex-col items-center justify-center text-center p-8">
               <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white animate-fadeInUp scroll-target"> {/* Changed text to white */}
                 Hi, I am Parth Vasave
               </h1>
@@ -107,3 +108,4 @@ export default function Home() {
     </ScrollObserver>
   );
 }
+
