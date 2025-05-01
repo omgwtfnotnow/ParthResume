@@ -16,6 +16,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      { // Added new domain for Google user content
+        protocol: 'https',
+        hostname: 'kstatic.googleusercontent.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };
