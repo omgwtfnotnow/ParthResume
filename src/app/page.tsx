@@ -11,18 +11,18 @@ export default function Home() {
   return (
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section - Changed background to accent (yellow) */}
+        {/* Hero Section - Using accent color (creamy light yellow) */}
         <section
           id="home"
-          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 bg-accent -mt-16 pt-16" // Changed bg-background to bg-accent
+          className="h-[calc(100vh-4rem)] flex flex-col items-center justify-center text-center p-8 bg-accent -mt-16 pt-16" // Changed to bg-accent
         >
           {/* Content directly inside the section */}
-          {/* Adjusted text colors to theme defaults - contrast should be okay with dark text on yellow */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-accent-foreground animate-fadeInUp scroll-target"> {/* Changed text to accent-foreground for better contrast */}
+          {/* Adjusted text colors for contrast against accent */}
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-accent-foreground animate-fadeInUp scroll-target"> {/* Use accent-foreground */}
             Hi, I am Parth Vasave
           </h1>
-          <p className="text-lg md:text-xl text-accent-foreground/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}> {/* Adjusted muted text for contrast */}
-            Showcasing my journey and projects in web development.
+          <p className="text-lg md:text-xl text-accent-foreground/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}> {/* Use accent-foreground with opacity */}
+            Showcasing my journey and projects
           </p>
           {/* Removed the empty div for buttons */}
         </section>
