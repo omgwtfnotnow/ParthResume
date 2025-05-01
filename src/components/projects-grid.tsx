@@ -61,10 +61,13 @@ const ProjectsGrid: React.FC = () => {
                 <Image
                     src={project.imageUrl}
                     alt={project.title}
-                    layout="fill" // Use fill layout
-                    objectFit="cover" // Cover the area
+                    fill // Use fill instead of layout="fill"
+                    style={{ objectFit: 'cover' }} // Use inline style for objectFit
                     className="rounded-t-lg"
+                    // Ensure sizes prop is provided if using fill and responsiveness is needed beyond simple cover, though often not strictly necessary with object-fit: cover
+                    // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     data-ai-hint={project.id === 1 ? "macos terminal code" : "project interface screenshot app design code"} // Updated AI hint for BrewUpdate
+                    priority={index === 0} // Prioritize loading the first image
                 />
              </div>
           </CardHeader>
