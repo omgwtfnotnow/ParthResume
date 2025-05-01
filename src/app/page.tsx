@@ -18,15 +18,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}>
               Showcasing my journey and projects in web development.
             </p>
-            <div className="flex justify-center gap-4 animate-fadeInUp scroll-target" style={{ animationDelay: '0.4s' }}>
-              <Button size="lg" variant="secondary" asChild>
-                <Link href="#projects">View Projects</Link>
-              </Button>
-              {/* Updated Button: Removed text-primary-foreground, adjusted hover */}
-              <Button size="lg" variant="outline" className="border-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild>
-                <Link href="#contact">Get In Touch</Link>
-              </Button>
-            </div>
+            {/* Removed the buttons div */}
           </div>
         </section>
 
