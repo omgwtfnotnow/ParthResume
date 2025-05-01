@@ -55,14 +55,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experience Section */}
-        <section id="experience" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-background scroll-mt-16">
+        {/* Experience Section - Removed min-h-screen, changed py-16 to py-12 */}
+        <section id="experience" className="flex flex-col items-center py-12 px-4 md:px-8 bg-background scroll-mt-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">Work Experience</h2>
           <ResumeTimeline filterType="experience" />
         </section>
 
-        {/* Education Section */}
-        <section id="education" className="min-h-screen flex flex-col items-center py-16 px-4 md:px-8 bg-secondary scroll-mt-16">
+        {/* Education Section - Removed min-h-screen, changed py-16 to py-12 */}
+        <section id="education" className="flex flex-col items-center py-12 px-4 md:px-8 bg-secondary scroll-mt-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center scroll-target animate-fadeInUp">Education</h2>
           <ResumeTimeline filterType="education" />
         </section>
