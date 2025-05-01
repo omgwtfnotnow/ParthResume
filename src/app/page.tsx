@@ -19,7 +19,7 @@ export default function Home() {
           {/* Content directly inside the section */}
           {/* Adjusted text colors for contrast against accent */}
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-accent-foreground animate-fadeInUp scroll-target"> {/* Use accent-foreground */}
-            Hi, I am Parth Vasave
+            Hi! I am Parth Vasave {/* Updated text */}
           </h1>
           <p className="text-lg md:text-xl text-accent-foreground/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}> {/* Use accent-foreground with opacity */}
             Showcasing my journey and projects
