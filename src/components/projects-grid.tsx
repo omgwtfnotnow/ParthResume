@@ -62,14 +62,14 @@ const ProjectsGrid: React.FC = () => {
                     src={project.imageUrl}
                     alt={project.title}
                     fill // Use fill instead of layout="fill"
-                    style={{ objectFit: 'cover' }} // Use inline style for objectFit - reverted back to 'cover'
+                    style={{ objectFit: 'cover' }} // Use inline style for objectFit
                     className="rounded-t-lg" // Removed bg-muted
                     // Ensure sizes prop is provided if using fill and responsiveness is needed beyond simple cover, though often not strictly necessary with object-fit: cover
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Added sizes prop for better optimization with fill
                     data-ai-hint={project.id === 1 ? "macos terminal commands screenshot" : "project interface screenshot app design code"} // Updated AI hint for BrewUpdate
                     priority={index < 3} // Prioritize loading the first few images
                     // Add unoptimized prop if the image source is local (in public folder) and not served via CDN
-                    unoptimized={project.id === 1}
+                    unoptimized={project.id === 1} // Explicitly add unoptimized for local images
                 />
              </div>
           </CardHeader>
