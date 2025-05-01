@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section with BackgroundGradientAnimation */}
+        {/* Hero Section with BackgroundGradientAnimation - Reverted to original content */}
         <section
           id="home"
           className="h-[calc(100vh-4rem)] relative -mt-16 pt-16" // Removed old gradient, set relative for absolute children
