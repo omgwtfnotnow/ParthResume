@@ -38,28 +38,30 @@ export function Header() {
   }, []);
 
   // Determine text color based on scroll position and hero visibility
-  // Use dark text (text-foreground) when hero is visible and not scrolled far
+  // Use dark text (text-amber-900) when hero is visible and not scrolled far
   // Use default theme text (primary) when scrolled or hero not visible
   const getTextColorClass = () => {
     if (!scrolled && isHeroVisible && !isMobile) {
-       // Use dark yellow text on yellow hero background when not scrolled far
-      return 'text-yellow-900 hover:text-yellow-700 hover:bg-transparent';
+       // Use dark amber text on gradient hero background when not scrolled far
+      return 'text-amber-900 hover:text-amber-700 hover:bg-transparent';
     }
     return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
   };
 
   const getLogoTextColorClass = () => {
      if (!scrolled && isHeroVisible) {
-        return 'text-yellow-900 hover:text-yellow-700';
+        // Use dark amber text on gradient hero background when not scrolled far
+        return 'text-amber-900 hover:text-amber-700';
      }
-     return 'text-primary hover:text-accent';
+     return 'text-primary hover:text-accent'; // Default theme text/hover
   }
 
    const getMobileIconColorClass = () => {
      if (!scrolled && isHeroVisible) {
-        return 'text-yellow-900 hover:text-yellow-700 hover:bg-transparent';
+        // Use dark amber text on gradient hero background when not scrolled far
+        return 'text-amber-900 hover:text-amber-700 hover:bg-transparent';
      }
-     return 'text-foreground hover:text-accent hover:bg-accent/10';
+     return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
    }
 
   // Updated navigation links for Experience and Education

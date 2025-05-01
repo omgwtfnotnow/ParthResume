@@ -140,3 +140,12 @@ html {
 html {
   scroll-padding-top: 4rem; /* Adjust based on header height */
 }
+
+/* Blur effect (optional, can be added to specific elements) */
+.blur-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px); /* Adjust blur intensity as needed */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  z-index: 5; /* Ensure it's above the gradient but below content */
+}
