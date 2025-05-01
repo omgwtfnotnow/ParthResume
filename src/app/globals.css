@@ -64,18 +64,6 @@ html {
     --font-geist-sans: '__GeistSans_Fallback_e1f4fe', '__GeistSans_Fallback_Fallback_e1f4fe';
     --font-geist-mono: '__GeistMono_Fallback_760017', '__GeistMono_Fallback_Fallback_760017';
 
-    /* Gradient Animation Variables */
-    --gradient-background-start: rgb(108, 0, 162); /* Default, can be overridden */
-    --gradient-background-end: rgb(0, 17, 82);    /* Default, can be overridden */
-    --first-color: 18, 113, 255;
-    --second-color: 221, 74, 255;
-    --third-color: 100, 220, 255;
-    --fourth-color: 200, 50, 50;
-    --fifth-color: 180, 180, 50;
-    --pointer-events: none;
-    --size: 80%;
-    --blending-value: hard-light;
-
   }
 
   .dark {
@@ -121,11 +109,6 @@ html {
     /* Update font variables for dark mode if necessary (usually same) */
     --font-geist-sans: '__GeistSans_Fallback_e1f4fe', '__GeistSans_Fallback_Fallback_e1f4fe';
     --font-geist-mono: '__GeistMono_Fallback_760017', '__GeistMono_Fallback_Fallback_760017';
-
-     /* Gradient Animation Variables for Dark Mode (example, adjust as needed) */
-    --gradient-background-start: rgb(10, 0, 20);
-    --gradient-background-end: rgb(0, 5, 15);
-    /* Keep other colors or adjust for dark theme visibility */
   }
 }
 
@@ -157,69 +140,4 @@ html {
 /* Smooth scroll target offset */
 html {
   scroll-padding-top: 4rem; /* Adjust based on header height */
-}
-
-/* Blur effect (optional, can be added to specific elements) */
-.blur-gradient-overlay {
-  position: absolute;
-  inset: 0;
-  backdrop-filter: blur(10px); /* Adjust blur intensity as needed */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  z-index: 5; /* Ensure it's above the gradient but below content */
-}
-
-
-/* Background Gradient Animation Keyframes */
-@keyframes moveInCircle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes moveVertical {
-  0% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(50%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-@keyframes moveHorizontal {
-  0% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-  50% {
-    transform: translateX(50%) translateY(10%);
-  }
-  100% {
-    transform: translateX(-50%) translateY(-10%);
-  }
-}
-
-
-/* Apply animations using keyframes */
-.animate-first {
-  animation: moveVertical 30s ease infinite;
-}
-.animate-second {
-  animation: moveInCircle 20s reverse infinite;
-}
-.animate-third {
-  animation: moveInCircle 40s linear infinite;
-}
-.animate-fourth {
-  animation: moveHorizontal 40s ease infinite;
-}
-.animate-fifth {
-  animation: moveInCircle 20s ease infinite;
 }
