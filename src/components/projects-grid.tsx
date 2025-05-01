@@ -16,7 +16,7 @@ interface Project {
   tags: string[];
 }
 
-// Updated project data based on user input
+// Updated project data based on user input, removing Delta, Epsilon, Zeta
 const projectsData: Project[] = [
   {
     id: 1,
@@ -44,35 +44,6 @@ const projectsData: Project[] = [
     liveLink: '#', // Placeholder link
     repoLink: '#', // Placeholder link
     tags: ['Next.js', 'Tailwind CSS', 'Yahoo Finance API', 'Real-time Data', 'Web App', 'Finance'],
-  },
-  // Keep additional placeholders or remove if only 3 projects are desired.
-  // For now, let's keep the original placeholders 4-6 for visual balance, but they can be removed.
-  {
-    id: 4,
-    title: 'Project Delta',
-    description: 'E-commerce solution with a focus on user experience.',
-    imageUrl: 'https://picsum.photos/seed/delta/600/400',
-    liveLink: '#',
-    repoLink: '#',
-    tags: ['Vue.js', 'Stripe', 'UX/UI', 'E-commerce'],
-  },
-    {
-    id: 5,
-    title: 'Project Epsilon',
-    description: 'Personal blog platform with markdown support and static site generation.',
-    imageUrl: 'https://picsum.photos/seed/epsilon/600/400',
-    liveLink: '#',
-    repoLink: '#',
-    tags: ['Gatsby', 'GraphQL', 'Markdown', 'Blog'],
-  },
-   {
-    id: 6,
-    title: 'Project Zeta',
-    description: 'Interactive learning tool for coding beginners.',
-    imageUrl: 'https://picsum.photos/seed/zeta/600/400',
-    liveLink: '#',
-    // repoLink: '#',
-    tags: ['Svelte', 'WebSockets', 'Education', 'Interactive'],
   },
 ];
 
