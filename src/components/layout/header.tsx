@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Home, User, Code, Briefcase, Mail, GraduationCap } from 'lucide-react'; // Added GraduationCap
+import { Menu, Home, User, Code, Briefcase, Mail, GraduationCap } from 'lucide-react'; // Added GraduationCap and Briefcase
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils'; // Import cn for conditional classes
@@ -61,7 +61,10 @@ export function Header() {
   );
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
+    <header className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        scrolled ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
+      )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         {/* Apply text-primary-foreground when not scrolled */}
         <Link href="#home" className={cn(
@@ -76,7 +79,10 @@ export function Header() {
         ) : isMobile ? (
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(!scrolled ? "text-primary-foreground hover:text-primary-foreground/80 hover:bg-transparent" : "hover:text-accent hover:bg-accent/10")}>
+              <Button variant="ghost" size="icon" className={cn(
+                  'transition-colors',
+                  !scrolled ? "text-primary-foreground hover:text-primary-foreground/80 hover:bg-transparent" : "text-foreground hover:text-accent hover:bg-accent/10"
+              )}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
