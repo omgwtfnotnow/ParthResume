@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image'; // Use next/image for optimization
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react'; // Add Github icon
+import { ExternalLink, Github } from 'lucide-react'; // Github icon no longer needed, but keep ExternalLink for potential future use
 
 interface Project {
   id: number;
@@ -33,7 +33,7 @@ const projectsData: Project[] = [
     description: 'An Android app for skincare product and dermatologist recommendations. Features a quiz for personalized suggestions. Built with Kotlin, XML, Android Gradle, and JSON.',
     imageUrl: 'https://picsum.photos/seed/celestial/600/400',
     liveLink: '#', // Placeholder link
-    repoLink: '#', // Added placeholder repo link to enable Code button
+    repoLink: '#', // Placeholder repo link
     tags: ['Android', 'Kotlin', 'XML', 'Skincare', 'Recommendation System', 'Mobile App'],
   },
   {
@@ -80,6 +80,8 @@ const ProjectsGrid: React.FC = () => {
             </div>
           </CardContent>
           <CardFooter className="p-4 pt-0 flex justify-end space-x-2">
+            {/* Removed the "Code" button */}
+            {/*
             {project.repoLink && (
               <Button asChild variant="outline" size="sm">
                 <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
@@ -87,7 +89,8 @@ const ProjectsGrid: React.FC = () => {
                 </a>
               </Button>
             )}
-            {/* Removed Live Demo button */}
+            */}
+            {/* Removed Live Demo button previously */}
             {/*
             <Button asChild variant="default" size="sm">
               <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
