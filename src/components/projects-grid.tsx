@@ -33,7 +33,7 @@ const projectsData: Project[] = [
     description: 'An Android app for skincare product and dermatologist recommendations. Features a quiz for personalized suggestions. Built with Kotlin, XML, Android Gradle, and JSON.',
     imageUrl: 'https://picsum.photos/seed/celestial/600/400',
     liveLink: '#', // Placeholder link
-    // repoLink: '#', // Assuming no public repo link provided
+    repoLink: '#', // Added placeholder repo link to enable Code button
     tags: ['Android', 'Kotlin', 'XML', 'Skincare', 'Recommendation System', 'Mobile App'],
   },
   {
