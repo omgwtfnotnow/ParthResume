@@ -34,12 +34,12 @@ export default function Home() {
         <section id="about" className="min-h-[60vh] flex items-center justify-center py-16 px-4 md:px-8 bg-background scroll-mt-16">
           <div className="max-w-3xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-target animate-fadeInUp">About Me</h2>
+            {/* Updated About Me content */}
             <p className="text-lg text-muted-foreground mb-4 scroll-target animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
-              I'm a passionate software engineer specializing in creating modern, responsive, and user-friendly web applications. With a strong foundation in front-end and back-end technologies, I love bringing ideas to life through code.
+              Hey there! I’m a passionate and curious Computer Science student with a love for building things that live on the web—and sometimes beyond it. Whether it’s a sleek website or a fun little experiment with code, I enjoy solving problems and turning ideas into interactive realities.
             </p>
             <p className="text-lg text-muted-foreground scroll-target animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-              My goal is to build efficient, scalable, and visually appealing digital experiences. Let's create something amazing together!
-              {/* Consider adding skills here or in a dedicated section */}
+              I’m currently pursuing my Bachelor of Engineering in Computer Science and Engineering (Data Science) from the University of Mumbai. Along the way, I’ve worked on diverse projects ranging from 3D web experiences and game development to full-stack apps. I enjoy experimenting with new technologies and pushing my creative and technical boundaries.
             </p>
           </div>
         </section>
