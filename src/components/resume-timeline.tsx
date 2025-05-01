@@ -15,35 +15,33 @@ interface TimelineItem {
   icon: React.ReactNode;
 }
 
-// Updated timelineData removing Senior and Junior Software Engineer roles
+// Updated timelineData with new education details
 const timelineData: TimelineItem[] = [
-  // Removed Senior Software Engineer
-  // Removed Software Engineer
   {
-    id: 1, // Adjusted ID
+    id: 1,
     type: 'experience',
     title: 'Android Developer Intern',
-    subtitle: 'Startup X', // Assuming a placeholder company name
+    subtitle: 'Startup X', // Placeholder company name
     date: 'Oct 2021 - Jan 2022',
     description: 'Learned Android Studio and Packaging Techniques. Got good grasp of Kotlin and XML. Helped developers with UI and debug Kotlin Code.',
     icon: <Briefcase className="h-5 w-5 text-primary" />,
   },
   {
-    id: 2, // Adjusted ID
+    id: 2,
     type: 'education',
-    title: 'M.S. Computer Science',
-    subtitle: 'University of Technology',
-    date: '2016 - 2018',
-    description: 'Focused on software engineering principles, algorithms, and distributed systems. Thesis on real-time data processing.',
+    title: 'Computer Science and Engineering (Data Science)',
+    subtitle: 'VCET, Vasai, Mumbai',
+    date: 'Expected 2026',
+    description: 'Relevant Coursework: DSA, DBMS, OOP, Web Computing',
     icon: <GraduationCap className="h-5 w-5 text-secondary-foreground" />,
   },
   {
-    id: 3, // Adjusted ID
+    id: 3,
     type: 'education',
-    title: 'B.S. Computer Science',
-    subtitle: 'State College',
-    date: '2012 - 2016',
-    description: 'Graduated with honors. Active member of the coding club and participated in hackathons.',
+    title: 'Diploma in Computer Engineering',
+    subtitle: 'MSBTE, Mumbai',
+    date: '2019 - 2022',
+    description: 'Completed diploma focusing on core computer engineering concepts.', // Slightly expanded description
     icon: <GraduationCap className="h-5 w-5 text-secondary-foreground" />,
   },
 ];
@@ -52,23 +50,40 @@ interface ResumeTimelineProps {
   filterType: 'experience' | 'education';
 }
 
+// Helper function to parse year from date string
+const parseYear = (dateString: string): number => {
+    // Handle "Expected YEAR"
+    if (dateString.toLowerCase().startsWith('expected')) {
+        const yearMatch = dateString.match(/\d{4}/);
+        return yearMatch ? parseInt(yearMatch[0], 10) : 9999; // Place expected dates far in the future for sorting
+    }
+    // Handle "YEAR - YEAR" or "Month YEAR - Month YEAR"
+    const yearMatches = dateString.match(/\d{4}/g);
+    if (yearMatches && yearMatches.length > 0) {
+        // Use the last year found (end year for ranges)
+        return parseInt(yearMatches[yearMatches.length - 1], 10);
+    }
+    // Handle single year "YEAR" or "Month YEAR"
+     const singleYearMatch = dateString.match(/\d{4}/);
+     if (singleYearMatch) {
+         return parseInt(singleYearMatch[0], 10);
+     }
+
+    // Default fallback (shouldn't happen with expected formats)
+    return 0;
+};
+
+
 const ResumeTimeline: React.FC<ResumeTimelineProps> = ({ filterType }) => {
-  // Sort experience items by date descending (most recent first)
-  // Sort education items by date descending (most recent first)
+  // Filter and sort data based on type and date
   const filteredData = timelineData
     .filter(item => item.type === filterType)
     .sort((a, b) => {
-      // Simple sort based on the start year extracted from the date string
-      // This might need adjustment if date formats become more complex
-      const yearA = parseInt(a.date.split(' ')[0].replace(/[^\d]/g, ''), 10) || 0;
-      const yearB = parseInt(b.date.split(' ')[0].replace(/[^\d]/g, ''), 10) || 0;
+      const yearA = parseYear(a.date);
+      const yearB = parseYear(b.date);
 
-      // Handle "Present" case for experience (though not present currently)
-      if (a.date.includes('Present')) return -1;
-      if (b.date.includes('Present')) return 1;
-
-      // If years are the same, we might need secondary sorting (e.g., month), but keeping it simple for now
-      return yearB - yearA; // Descending order
+      // Sort descending by year (most recent first)
+      return yearB - yearA;
     });
 
 
