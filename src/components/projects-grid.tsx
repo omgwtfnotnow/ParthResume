@@ -16,34 +16,37 @@ interface Project {
   tags: string[];
 }
 
+// Updated project data based on user input
 const projectsData: Project[] = [
   {
     id: 1,
-    title: 'Project Alpha',
-    description: 'An innovative web application leveraging AI for content generation.',
-    imageUrl: 'https://picsum.photos/seed/alpha/600/400',
-    liveLink: '#',
-    repoLink: '#',
-    tags: ['React', 'AI', 'Next.js', 'Tailwind CSS'],
+    title: 'BrewUpdate',
+    description: 'A Python tool packaged as a standalone macOS app using Py2App. It visualizes Homebrew packages and allows users to modify permissions, check updates, and remove packages.',
+    imageUrl: 'https://picsum.photos/seed/brewupdate/600/400',
+    liveLink: '#', // Placeholder link
+    repoLink: '#', // Placeholder link
+    tags: ['Python', 'macOS', 'Py2App', 'Homebrew', 'GUI Tool'],
   },
   {
     id: 2,
-    title: 'Project Beta',
-    description: 'A mobile-first platform connecting local communities.',
-    imageUrl: 'https://picsum.photos/seed/beta/600/400',
-    liveLink: '#',
-    // repoLink: '#', // Example without repo link
-    tags: ['React Native', 'Firebase', 'Community'],
+    title: 'Celestial - SkinCare App',
+    description: 'An Android app for skincare product and dermatologist recommendations. Features a quiz for personalized suggestions. Built with Kotlin, XML, Android Gradle, and JSON.',
+    imageUrl: 'https://picsum.photos/seed/celestial/600/400',
+    liveLink: '#', // Placeholder link
+    // repoLink: '#', // Assuming no public repo link provided
+    tags: ['Android', 'Kotlin', 'XML', 'Skincare', 'Recommendation System', 'Mobile App'],
   },
   {
     id: 3,
-    title: 'Project Gamma',
-    description: 'Data visualization dashboard for real-time analytics.',
-    imageUrl: 'https://picsum.photos/seed/gamma/600/400',
-    liveLink: '#',
-    repoLink: '#',
-    tags: ['D3.js', 'Node.js', 'WebSocket', 'Analytics'],
+    title: 'Stock Monitoring and Billing',
+    description: 'A web-based stock monitoring and trading application fetching live market data from Yahoo Finance. Features real-time updates. Built using Next.js and Tailwind CSS.',
+    imageUrl: 'https://picsum.photos/seed/stockmonitor/600/400',
+    liveLink: '#', // Placeholder link
+    repoLink: '#', // Placeholder link
+    tags: ['Next.js', 'Tailwind CSS', 'Yahoo Finance API', 'Real-time Data', 'Web App', 'Finance'],
   },
+  // Keep additional placeholders or remove if only 3 projects are desired.
+  // For now, let's keep the original placeholders 4-6 for visual balance, but they can be removed.
   {
     id: 4,
     title: 'Project Delta',
@@ -90,7 +93,7 @@ const ProjectsGrid: React.FC = () => {
                     layout="fill" // Use fill layout
                     objectFit="cover" // Cover the area
                     className="rounded-t-lg"
-                    data-ai-hint="project interface screenshot" // AI hint
+                    data-ai-hint="project interface screenshot app design code" // AI hint slightly broadened
                 />
              </div>
           </CardHeader>
