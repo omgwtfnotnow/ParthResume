@@ -38,28 +38,28 @@ export function Header() {
   }, []);
 
   // Determine text color based on scroll position and hero visibility
-  // Use dark text (text-amber-900) when hero is visible and not scrolled far
-  // Use default theme text (primary) when scrolled or hero not visible
+  // Use white text when hero is visible and not scrolled far (over gradient)
+  // Use default theme text (foreground) when scrolled or hero not visible
   const getTextColorClass = () => {
     if (!scrolled && isHeroVisible && !isMobile) {
-       // Use dark amber text on gradient hero background when not scrolled far
-      return 'text-amber-900 hover:text-amber-700 hover:bg-transparent';
+       // Use white text on gradient hero background when not scrolled far
+      return 'text-white hover:text-white/80 hover:bg-transparent';
     }
     return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
   };
 
   const getLogoTextColorClass = () => {
      if (!scrolled && isHeroVisible) {
-        // Use dark amber text on gradient hero background when not scrolled far
-        return 'text-amber-900 hover:text-amber-700';
+        // Use white text on gradient hero background when not scrolled far
+        return 'text-white hover:text-white/80';
      }
      return 'text-primary hover:text-accent'; // Default theme text/hover
   }
 
    const getMobileIconColorClass = () => {
      if (!scrolled && isHeroVisible) {
-        // Use dark amber text on gradient hero background when not scrolled far
-        return 'text-amber-900 hover:text-amber-700 hover:bg-transparent';
+        // Use white text on gradient hero background when not scrolled far
+        return 'text-white hover:text-white/80 hover:bg-transparent';
      }
      return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
    }
@@ -142,3 +142,4 @@ export function Header() {
     </header>
   );
 }
+

@@ -1,33 +1,34 @@
 
+
 import ProjectsGrid from '@/components/projects-grid'; // Import the new ProjectsGrid
 import ResumeTimeline from '@/components/resume-timeline';
 import ScrollObserver from '@/components/scroll-observer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link'; // Import Link for smooth scrolling buttons
 import { Github, Linkedin, Mail } from 'lucide-react'; // Import icons for contact section
+import { BackgroundGradientAnimation } from '@/components/background-gradient-animation'; // Import the new component
 
 export default function Home() {
   return (
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
-        {/* Hero Section */}
-        {/* Changed background to an animated gradient and adjusted text colors */}
+        {/* Hero Section with BackgroundGradientAnimation */}
         <section
           id="home"
-          className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-yellow-100 via-yellow-300 to-amber-400 text-amber-900 text-center p-8 -mt-16 pt-16 relative overflow-hidden bg-[length:200%_200%] animate-gradient-animation" // Added bg-[length:200%_200%] and animate-gradient-animation
+          className="h-[calc(100vh-4rem)] relative -mt-16 pt-16" // Removed old gradient, set relative for absolute children
         >
-          {/* Optional: Add pseudo-elements for blur effect if desired */}
-          {/* <div className="absolute inset-0 backdrop-blur-sm"></div> */}
-          <div className="max-w-3xl z-10"> {/* Ensure content is above any blur effect */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInUp scroll-target">
-              Hi, I am Parth Vasave
-            </h1>
-            {/* Changed paragraph text color */}
-            <p className="text-lg md:text-xl text-amber-800 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}>
-              Showcasing my journey and projects in web development.
-            </p>
-            {/* Removed the buttons div */}
-          </div>
+          <BackgroundGradientAnimation>
+            {/* Content overlayed on the gradient */}
+            <div className="absolute z-10 inset-0 flex flex-col items-center justify-center text-center p-8 pointer-events-none"> {/* Added z-10, removed z-50 from user example as z-10 should be sufficient */}
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white animate-fadeInUp scroll-target"> {/* Changed text to white */}
+                Hi, I am Parth Vasave
+              </h1>
+              <p className="text-lg md:text-xl text-white/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}> {/* Changed text to white/80 */}
+                Showcasing my journey and projects in web development.
+              </p>
+               {/* Content structure matches the user example's intent */}
+            </div>
+          </BackgroundGradientAnimation>
         </section>
 
         {/* About Section - Remains bg-background */}
@@ -72,7 +73,7 @@ export default function Home() {
             <p className="text-lg text-muted-foreground mb-8 scroll-target animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
               Feel free to reach out or connect with me on social media!
             </p>
-            <div className="flex justify-center items-center space-x-6 scroll-target animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+            <div className="flex justify-center items-center space-x-6 scroll-target animate-fadeInUp pointer-events-auto" style={{ animationDelay: '0.2s' }}> {/* Added pointer-events-auto */}
               <a
                 href="https://github.com/omgwtfnotnow"
                 target="_blank"

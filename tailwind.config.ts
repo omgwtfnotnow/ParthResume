@@ -88,11 +88,7 @@ export default {
   					height: '0'
   				}
   			},
-        'gradient-animation': { // Added gradient animation keyframes
-          '0%': { 'background-position': '0% 50%' },
-          '50%': { 'background-position': '100% 50%' },
-          '100%': { 'background-position': '0% 50%' },
-        },
+        // Removed gradient-animation keyframes as they are now in globals.css
         fadeInUp: { // Added keyframes for fadeInUp if not implicitly defined by CSS
             '0%': {
                 opacity: '0',
@@ -107,7 +103,7 @@ export default {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        'gradient-animation': 'gradient-animation 10s ease infinite', // Added gradient animation definition
+        // Removed gradient-animation definition as it's handled in globals.css now
         'fadeInUp': 'fadeInUp 0.8s ease-out forwards', // Ensure fadeInUp is defined if not implicitly handled
   		}
   	}
