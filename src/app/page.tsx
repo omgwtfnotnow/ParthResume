@@ -10,12 +10,14 @@ export default function Home() {
     <ScrollObserver>
       <div className="flex flex-col min-h-screen">
         {/* Hero Section */}
-        <section id="home" className="h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-accent to-primary text-primary-foreground text-center p-8 -mt-16 pt-16">
+        {/* Changed background to bg-yellow-300 and text colors for contrast */}
+        <section id="home" className="h-[calc(100vh-4rem)] flex items-center justify-center bg-yellow-300 text-yellow-900 text-center p-8 -mt-16 pt-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInUp scroll-target">
               Hi, I am Parth Vasave {/* Changed heading text */}
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}>
+            {/* Changed paragraph text color */}
+            <p className="text-lg md:text-xl text-yellow-800 mb-8 animate-fadeInUp scroll-target" style={{ animationDelay: '0.2s' }}>
               Showcasing my journey and projects in web development.
             </p>
             {/* Removed the buttons div */}

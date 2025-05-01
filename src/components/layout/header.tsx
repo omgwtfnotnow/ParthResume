@@ -13,16 +13,54 @@ export function Header() {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(true); // Track hero section visibility
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      const scrollPosition = window.scrollY;
+      setScrolled(scrollPosition > 10);
+
+      // Check if hero section is (mostly) out of view
+      const heroElement = document.getElementById('home');
+      if (heroElement) {
+        const heroBottom = heroElement.getBoundingClientRect().bottom;
+        // Consider hero not visible if its bottom edge is above the viewport top
+        setIsHeroVisible(heroBottom > 50); // Adjust threshold as needed
+      } else {
+        setIsHeroVisible(scrollPosition < window.innerHeight * 0.5); // Fallback if element not found
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
-    // Initial check
+    // Initial checks
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Determine text color based on scroll position and hero visibility
+  // Use dark text (text-foreground) when hero is visible and not scrolled far
+  // Use default theme text (primary) when scrolled or hero not visible
+  const getTextColorClass = () => {
+    if (!scrolled && isHeroVisible && !isMobile) {
+       // Use dark yellow text on yellow hero background when not scrolled far
+      return 'text-yellow-900 hover:text-yellow-700 hover:bg-transparent';
+    }
+    return 'text-foreground hover:text-accent hover:bg-accent/10'; // Default theme text/hover
+  };
+
+  const getLogoTextColorClass = () => {
+     if (!scrolled && isHeroVisible) {
+        return 'text-yellow-900 hover:text-yellow-700';
+     }
+     return 'text-primary hover:text-accent';
+  }
+
+   const getMobileIconColorClass = () => {
+     if (!scrolled && isHeroVisible) {
+        return 'text-yellow-900 hover:text-yellow-700 hover:bg-transparent';
+     }
+     return 'text-foreground hover:text-accent hover:bg-accent/10';
+   }
 
   // Updated navigation links for Experience and Education
   const navLinks = [
@@ -41,13 +79,11 @@ export function Header() {
           key={link.href}
           variant="ghost"
           asChild
-          // Apply text-primary-foreground when not scrolled on desktop
+          // Apply text color based on scroll state
           className={cn(
             'justify-start transition-colors',
             isMobile ? 'w-full text-left' : '',
-            !isMobile && !scrolled
-              ? 'text-primary-foreground hover:text-primary-foreground/80 hover:bg-transparent' // Lighter text, adjusted hover
-              : 'hover:text-accent hover:bg-accent/10' // Default text color (primary), accent hover
+            !isMobile ? getTextColorClass() : 'text-foreground hover:text-accent hover:bg-accent/10' // Mobile always uses default theme text
           )}
           onClick={() => isMobile && setIsOpen(false)}
         >
@@ -63,13 +99,14 @@ export function Header() {
   return (
     <header className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        // Apply background only when scrolled or mobile sheet is open
+        (scrolled || (isMobile && isOpen)) ? 'bg-background/90 backdrop-blur-sm shadow-md' : 'bg-transparent'
       )}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        {/* Apply text-primary-foreground when not scrolled */}
+        {/* Apply text color based on scroll state */}
         <Link href="#home" className={cn(
             "text-xl font-bold transition-colors",
-            scrolled ? "text-primary hover:text-accent" : "text-primary-foreground hover:text-primary-foreground/80"
+            getLogoTextColorClass()
           )}>
           My Portfolio
         </Link>
@@ -81,7 +118,7 @@ export function Header() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className={cn(
                   'transition-colors',
-                  !scrolled ? "text-primary-foreground hover:text-primary-foreground/80 hover:bg-transparent" : "text-foreground hover:text-accent hover:bg-accent/10"
+                  getMobileIconColorClass()
               )}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle Menu</span>
