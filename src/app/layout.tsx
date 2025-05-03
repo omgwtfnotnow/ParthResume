@@ -7,8 +7,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Personal Zenith - Parth Vasave',
-  description: 'Portfolio showcasing projects and experience of Parth Vasave',
+  title: 'Parth Vasave',
+  description: 'Portfolio showcasing my projects and experience',
 };
 
 export default function RootLayout({
